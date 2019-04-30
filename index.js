@@ -236,7 +236,7 @@ const backupCollection = (
         backupFunctions.push(() => {
           const backupDocumentPromise = backupDocument(
             document,
-            backupPath + '/' + document.id,
+            backupPath,
             logPath + collection.id + '/'
           );
           restoreDocument(logPath + collection.id, document);

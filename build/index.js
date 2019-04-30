@@ -174,7 +174,7 @@ var backupCollection = function backupCollection(collection, backupPath, logPath
       var backupFunctions = [];
       snapshots.forEach(function (document) {
         backupFunctions.push(function () {
-          var backupDocumentPromise = backupDocument(document, backupPath + '/' + document.id, logPath + collection.id + '/');
+          var backupDocumentPromise = backupDocument(document, backupPath, logPath + collection.id + '/');
           restoreDocument(logPath + collection.id, document);
           return backupDocumentPromise;
         });
